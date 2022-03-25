@@ -1,0 +1,6 @@
+namespace: proxy
+resources:
+  - 0.namespace.yaml
+  - services.yaml
+  - printer_proxy.yaml
+  - printer_config.yaml

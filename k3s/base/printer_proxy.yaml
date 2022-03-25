@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: printer-proxy-app
+  name: printer-proxy-app
+  namespace: proxy
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: printer-proxy-app
+  template:
+    metadata:
+      labels:
+        app: printer-proxy-app
+    spec:
+      containers:
+      - name: printer-proxy-app
+        image: linuxserver/nginx:version-1.20.1-r3
+        ports:
+        - containerPort: 80
+        volumeMounts:
+        - mountPath: /config/nginx/site-confs   # mount nginx-conf volumn to /etc/nginx
+          readOnly: true
+          name: nginx-conf
+        - mountPath: /var/log/nginx
+          name: log
+      nodeSelector:
+        arch: arm64
+      volumes:
+      - name: nginx-conf
+        configMap:
+          name: printer_nginx-conf   # place ConfigMap `nginx-conf` on /etc/nginx
+          items:
+            - key: nginx.conf
+              path: default
+      - name: log

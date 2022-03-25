@@ -1,0 +1,25 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+  name: proxy-printer-ingress
+  namespace: printer-proxy
+spec:
+  rules:
+  - host: printer.tino.sh
+    http:
+      paths:
+      - pathType: Prefix
+        path: /
+        backend:
+          service:
+            name: proxy-service
+            port: 
+              number: 7777
+  tls:
+  - hosts:
+    - printer.tino.sh
+    secretName: printer-tino-sh-tls
