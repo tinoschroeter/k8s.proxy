@@ -6,7 +6,7 @@ metadata:
     cert-manager.io/cluster-issuer: letsencrypt-prod
     nginx.ingress.kubernetes.io/ssl-redirect: "true"
   name: proxy-printer-ingress
-  namespace: printer-proxy
+  namespace: proxy
 spec:
   rules:
   - host: printer.tino.sh
