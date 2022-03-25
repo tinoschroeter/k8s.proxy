@@ -31,7 +31,7 @@ spec:
       volumes:
       - name: nginx-conf
         configMap:
-          name: printer_nginx-conf   # place ConfigMap `nginx-conf` on /etc/nginx
+          name: printer-nginx-conf   # place ConfigMap `nginx-conf` on /etc/nginx
           items:
             - key: nginx.conf
               path: default
