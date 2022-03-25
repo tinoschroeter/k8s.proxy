@@ -4,3 +4,5 @@ resources:
   - services.yaml
   - printer_proxy.yaml
   - printer_config.yaml
+  - backup_proxy.yaml
+  - backup_config.yaml
