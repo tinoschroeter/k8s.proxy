@@ -17,7 +17,7 @@ spec:
         backend:
           service:
             name: proxy-service
-            port: 
+            port:
               number: 7777
 
   - host: backup.tino.sh
@@ -28,7 +28,7 @@ spec:
         backend:
           service:
             name: backup-proxy-service
-            port: 
+            port:
               number: 7777
   tls:
   - hosts:
