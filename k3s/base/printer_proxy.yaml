@@ -26,8 +26,6 @@ spec:
           name: nginx-conf
         - mountPath: /var/log/nginx
           name: log
-      nodeSelector:
-        arch: arm64
       volumes:
       - name: nginx-conf
         configMap:
