@@ -30,6 +30,18 @@ spec:
             name: backup-proxy-service
             port:
               number: 7777
+
+  - host: hello.tino.sh
+    http:
+      paths:
+      - pathType: Prefix
+        path: /
+        backend:
+          service:
+            name: hello-proxy-service
+            port:
+              number: 7777
+
   tls:
   - hosts:
     - printer.tino.sh
@@ -38,3 +50,7 @@ spec:
   - hosts:
     - backup.tino.sh
     secretName: backup-tino-sh-tls
+
+  - hosts:
+    - hello.tino.sh
+    secretName: hello-tino-sh-tls

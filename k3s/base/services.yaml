@@ -23,3 +23,17 @@ spec:
   ports:
     - port: 7777
       targetPort: 80
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: hello-proxy-service
+  namespace: proxy
+spec:
+  selector:
+    app: hello-proxy-app
+  ports:
+    - port: 7777
+      targetPort: 80

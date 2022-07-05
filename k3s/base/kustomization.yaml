@@ -5,3 +5,5 @@ resources:
   - printer_config.yaml
   - backup_proxy.yaml
   - backup_config.yaml
+  - hello_proxy.yaml
+  - hello_config.yaml
