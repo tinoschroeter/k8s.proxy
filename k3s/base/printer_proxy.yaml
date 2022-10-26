@@ -6,7 +6,7 @@ metadata:
   name: printer-proxy-app
   namespace: proxy
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: printer-proxy-app

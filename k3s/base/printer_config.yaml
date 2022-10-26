@@ -31,4 +31,9 @@ data:
         proxy_http_version 1.1;
         client_max_body_size 0;    
           }
+       location /nginx_status {
+         stub_status;
+         allow 127.0.0.1;
+         deny all;
+         }
         }
